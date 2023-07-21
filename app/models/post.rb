@@ -10,6 +10,7 @@ class Post < ApplicationRecord
     comments.last(5).reverse
   end
 
+  private
   def post_counter
     author.update(posts_counter: author.posts.count)
   end
