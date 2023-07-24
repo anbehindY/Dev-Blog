@@ -8,4 +8,4 @@ class PostsController < ApplicationController
     @user = User.find_by_id(params[:id])
     @post = @user.posts.find_by_id(params[:post_id])
   end
-end 
+end
