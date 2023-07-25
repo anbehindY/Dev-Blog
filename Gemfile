@@ -57,6 +57,8 @@ group :development, :test do
   gem 'rails-controller-testing'
 end
 
+gem 'simplecov', require: false, group: :test
+
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
