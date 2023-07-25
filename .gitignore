@@ -34,4 +34,4 @@
 node_modules/
 
 # Ignore tests coverage files
-coverage
+coverage/
