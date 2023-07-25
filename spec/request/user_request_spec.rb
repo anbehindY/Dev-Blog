@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'User', type: :request do
   let(:user) { User.create!(name: 'anbehindY', photo: 'person.jpg', bio: 'Full-stack web developer') }
 
-  context 'GET /users' do
+  context 'GET #index' do
     it 'should renders a successful response' do
       get '/users'
       expect(response).to be_successful
@@ -20,7 +20,7 @@ RSpec.describe 'User', type: :request do
     end
   end
 
-  context 'GET /users/:id' do
+  context 'GET #show' do
     it 'should renders a successful response' do
       get user_url(user)
       expect(response).to be_successful
