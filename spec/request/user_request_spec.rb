@@ -10,19 +10,19 @@ RSpec.describe 'User', type: :request do
     end
 
     it 'should render the correct template' do
-      get '/users'
+      get users_url
       expect(response.body).to render_template(:index)
     end
 
     it 'should return the correct placeholder text' do
-      get '/users'
+      get users_url
       expect(response.body).to include('List of all users')
     end
   end
 
   context 'GET #show' do
     it 'should renders a successful response' do
-      get user_url(user)
+      get "/users/#{user.id}"
       expect(response).to be_successful
     end
 

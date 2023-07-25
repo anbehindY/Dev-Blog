@@ -11,12 +11,12 @@ RSpec.describe 'Post', type: :request do
     end
 
     it 'should render the correct template' do
-      get "/users/#{user.id}/posts"
+      get user_posts_url(user)
       expect(response.body).to render_template(:index)
     end
 
     it 'should return the correct placeholder text' do
-      get "/users/#{user.id}/posts"
+      get user_posts_url(user)
       expect(response.body).to include('List of all posts from the given user id')
     end
   end
@@ -28,12 +28,12 @@ RSpec.describe 'Post', type: :request do
     end
 
     it 'should render the correct template' do
-      get "/users/#{user.id}/posts/#{post.id}"
+      get user_post_url(user, post)
       expect(response.body).to render_template(:show)
     end
 
     it 'should return the correct placeholder text' do
-      get "/users/#{user.id}/posts/#{post.id}"
+      get user_post_url(user, post)
       expect(response.body).to include('Post of the given parameters')
     end
   end
