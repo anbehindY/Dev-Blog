@@ -31,4 +31,4 @@
 /config/master.key
 
 node_modules/
-echo coverage >> .gitignore
+coverage
