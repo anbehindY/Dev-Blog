@@ -29,7 +29,7 @@ RSpec.describe 'User', type: :request do
     it 'should render the correct template' do
       get user_url(user)
       expect(response.body).to render_template(:show)
-  end
+    end
 
     it 'should return the correct placeholder text' do
       get user_url(user)
