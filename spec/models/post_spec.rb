@@ -2,7 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   let(:user) { User.create(name: 'anbehindY', photo: 'person.jpg', bio: 'Full-stack developer', posts_counter: 0) }
-  subject { described_class.new(author: user, title: 'Hello', text: 'This is my first post', comments_counter: 0, likes_counter: 0) }
+  subject do
+    described_class.new(author: user, title: 'Hello', text: 'This is my first post', comments_counter: 0,
+                        likes_counter: 0)
+  end
 
   context 'Validation measures before saving into database' do
     before { subject.save }
