@@ -10,7 +10,7 @@ class Post < ApplicationRecord
   after_destroy :post_counter
 
   def recent_comments
-    comments.last(5).reverse
+    comments.last(5)
   end
 
   private
