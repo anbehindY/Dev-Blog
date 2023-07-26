@@ -17,7 +17,7 @@ RSpec.describe 'Post', type: :request do
 
     it 'should return the correct placeholder text' do
       get user_posts_url(user)
-      expect(response.body).to include('List of all posts from the given user id')
+      expect(response.body).to include('anbehindY')
     end
   end
 
@@ -34,7 +34,7 @@ RSpec.describe 'Post', type: :request do
 
     it 'should return the correct placeholder text' do
       get user_post_url(user, post)
-      expect(response.body).to include('Post of the given parameters')
+      expect(response.body).to include('Programming')
     end
   end
 end
