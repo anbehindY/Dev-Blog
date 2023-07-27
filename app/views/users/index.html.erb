@@ -1,14 +1,6 @@
 <div class='template'>
   <% @users.each do |user| %>
-      <div class='user-container'>
-          <img src='<%= user.photo %>' alt='User Profile photo' class='user-img' />
-        <div class='user-div'>
-          <h2 class='username'>
-            <%= link_to user.name, user_url(user) %>
-          </h2>
-          <small class='posts_counter'>Number of posts: <%= user.posts_counter %></small>
-        </div>
-      </div>
+    <%= render partial: 'shared/user-container', locals: { user: user } %>
   <% end %>
 </div>
 <div></div>
