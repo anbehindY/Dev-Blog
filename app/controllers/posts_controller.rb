@@ -13,4 +13,19 @@ class PostsController < ApplicationController
     @user = current_user
     @post = Post.new
   end
+
+  def create
+    @post = current_user.posts.create(post_params)
+    if @post.persisted?
+      redirect_to @post
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :text)
+  end
 end
