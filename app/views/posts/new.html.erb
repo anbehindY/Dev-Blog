@@ -1,0 +1,14 @@
+<h1>Add post details</h1>
+<%= form_with model: @post, url: user_posts_path do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title, required: true, autofocus: true %>
+  </div>
+  <div>
+    <%= f.label :text %>
+    <%= f.text_area :text, required: true %>
+  </div>
+  <div>
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
