@@ -1,21 +1,22 @@
-<div>
-  <div>
-    <img src='<%= @user.photo %>' alt='User profile photo' width='150' height='200'/>
-    <div>
-      <p><%= @user.name %></p>
-      <small>Number of posts: <%= @user.posts_counter %></small>
+<div class='template'>
+  <div class='user-container'>
+    <img src='<%= @user.photo %>' alt='User profile photo' class='user-img'/>
+    <div class='user-div'>
+      <h2 class><%= @user.name %></h2>
+      <small class='posts_counter'>Number of posts: <%= @user.posts_counter %></small>
     </div>
   </div>
   <div><%= @user.bio %></div>
   <% @user.recent_posts.each do |post| %>
-    <div>
-      <h3><%= link_to post.title, user_post_url(post) %></h3>
-      <p><%= post.text %></p>
-      <small>Comments:<%= post.comments_counter %>, Likes:<%= post.likes_counter %></small>
+      <div>
+        <h3><%= link_to post.title, user_post_url(post) %></h3>
+        <p><%= post.text %></p>
+        <small>Comments:<%= post.comments_counter %>, Likes:<%= post.likes_counter %></small>
       </div>
-    <div>
   <% end %>
-  <button type="button">
-    <%= link_to "See all posts", user_posts_url(@user)%>
-  </button>
+  <div class='button-wrapper'>
+    <button type="button" class='see-posts-btn'>
+      <%= link_to "See all posts", user_posts_url(@user)%>
+    </button>
+  </div>
 </div>
