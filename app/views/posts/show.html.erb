@@ -5,9 +5,12 @@
     <p><%= @post.text %></p>
   </div>
   <div>
-      <% @post.comments.each do |comment| %>
-        <p><%= comment.author.name%>:<%= comment.text%></p>
-      <% end %>
-    </div>
+    <% @post.comments.each do |comment| %>
+      <p><%= comment.author.name%>:<%= comment.text%></p>
+    <% end %>
+  </div>
+  <button type='button'>
+    <%= link_to 'Go back to profile', user_url(@current_user) %>
+  </button>
 </div>
 
