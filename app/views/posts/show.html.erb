@@ -10,6 +10,10 @@
     <%= f.text_area :text %>
     <%= f.submit 'Comment' %>
   <% end %>
+  <%= form_with model:[@user, @post.likes.new], url: user_post_likes_url(@user,@post), local: true do |f| %>
+    <%= f.hidden_field :user_id, value: @current_user.id %>
+    <%= f.submit 'Like' %>
+  <% end %>
   <button type='button'>
     <%= link_to 'Go back to profile', user_url(@current_user) %>
   </button>
