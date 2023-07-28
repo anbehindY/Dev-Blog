@@ -1,9 +1,5 @@
 <div class='template'>
-  <div>
-    <h1><%= @post.title %></h1>
-    <small>Comments:<%= @post.comments_counter %>, Likes:<%= @post.likes_counter %></small>
-    <p><%= @post.text %></p>
-  </div>
+  <%= render partial: 'shared/post', locals: { user: @user, post: @post } %>
   <div>
     <% @post.comments.each do |comment| %>
       <p><%= comment.author.name%>:<%= comment.text%></p>
