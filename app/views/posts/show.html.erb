@@ -5,6 +5,11 @@
       <p><%= comment.author.name%>:<%= comment.text%></p>
     <% end %>
   </div>
+  <%= form_with model: [@user, @post.comments.new], url: user_post_comments_url(@user, @post), local: true do |f| %>
+    <%= f.hidden_field :user_id, value: @current_user.id %>
+    <%= f.text_area :text %>
+    <%= f.submit 'Comment' %>
+  <% end %>
   <button type='button'>
     <%= link_to 'Go back to profile', user_url(@current_user) %>
   </button>
