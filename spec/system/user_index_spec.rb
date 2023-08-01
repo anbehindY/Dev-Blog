@@ -4,7 +4,7 @@ RSpec.describe 'User Index Page', type: :system do
   before do
     driven_by(:rack_test)
     @user1 = User.create!(name: 'anbehindY', photo: 'person.jpg', bio: 'Full-stack web developer')
-    @user2 = User.create!(name: 'PI', photo: 'person2.jpg', bio: 'Full-stack web developer')
+    @user2 = User.create!(name: 'picasso', photo: 'person2.jpg', bio: 'Full-stack web developer')
     @post1 = Post.create!(author: @user1, title: 'First Post', text: 'This is my first post!')
     @post2 = Post.create!(author: @user2, title: 'first post', text: 'This is my first post!')
   end
@@ -33,13 +33,19 @@ RSpec.describe 'User Index Page', type: :system do
   end
   
   context 'when you clicks on the name of a user' do
-    it 'redirects to the user show page' do
+    it 'redirects to the user1 show page' do
       visit users_path
-
+  
       click_link(@user1.name)
-      click_link(@user2.name)
-
+  
       expect(page).to have_current_path(user_path(@user1))
+    end
+
+    it 'redirects to the user2 show page' do
+      visit users_path
+  
+      click_link(@user2.name)
+  
       expect(page).to have_current_path(user_path(@user2))
     end
   end
