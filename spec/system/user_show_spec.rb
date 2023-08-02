@@ -12,25 +12,25 @@ RSpec.describe 'User Show Page', type: :system do
   context 'when the page is loaded' do
     it 'shows the username' do
       visit user_path(@user)
-  
+
       expect(page).to have_content(@user.name)
     end
 
     it 'shows the profile picture' do
       visit user_path(@user)
-  
+
       expect(page).to have_css("img[src*='person.jpg']")
     end
 
     it 'shows the number of posts by the user' do
       visit user_path(@user)
-  
+
       expect(page).to have_content(@user.posts.count)
     end
 
     it 'shows the bio of the user' do
       visit user_path(@user)
-  
+
       expect(page).to have_content(@user.bio)
     end
 
