@@ -1,4 +1,5 @@
 <div class='template'>
+  <h1>@<%= @user.name %></h1>
   <%= render partial: 'shared/post', locals: { user: @user, post: @post } %>
   <div>
     <% @post.comments.each do |comment| %>
