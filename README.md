@@ -63,7 +63,7 @@ git clone https://github.com/anbehindY/Dev-Blog.git
 
 ### Install
 
-Run `sudo bundle install` to install all the required dependencies.
+Run `bundle install` to install all the required dependencies.
 
 ### Usage
 
